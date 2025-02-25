@@ -1,0 +1,14 @@
+.res-card {
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.card-img {
+  width: 100%;
+}

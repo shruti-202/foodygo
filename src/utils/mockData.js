@@ -17,6 +17,7 @@ export const fakeFetch = (url) => {
                 is_vegetarian: true,
                 is_spicy: false,
                 delivery_time: 30,
+                avgRating: 4.6,
               },
               {
                 id: 2,
@@ -28,6 +29,7 @@ export const fakeFetch = (url) => {
                 is_vegetarian: false,
                 is_spicy: true,
                 delivery_time: 35,
+                avgRating: 4.4,
               },
               {
                 id: 3,
@@ -39,6 +41,7 @@ export const fakeFetch = (url) => {
                 is_vegetarian: true,
                 is_spicy: false,
                 delivery_time: 25,
+                avgRating: 4.1,
               },
               {
                 id: 4,
@@ -51,6 +54,7 @@ export const fakeFetch = (url) => {
                 is_vegetarian: false,
                 is_spicy: false,
                 delivery_time: 40,
+                avgRating: 4,
               },
               {
                 id: 5,
@@ -63,6 +67,7 @@ export const fakeFetch = (url) => {
                 is_vegetarian: true,
                 is_spicy: false,
                 delivery_time: 15,
+                avgRating: 3,
               },
             ],
           },

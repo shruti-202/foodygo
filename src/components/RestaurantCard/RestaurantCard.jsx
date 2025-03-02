@@ -3,7 +3,7 @@ import "./RestaurantCard.css";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { name, description, price, delivery_time, image } = resData;
+  const { name, description, price, delivery_time, image, avgRating } = resData;
 
   return (
     <div className="res-card">
@@ -11,6 +11,7 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>{description}</h4>
       <h4>{price}₹</h4>
+      <h4>{avgRating}⭐</h4>
       <h4>{delivery_time}</h4>
     </div>
   );

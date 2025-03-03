@@ -1,14 +1,22 @@
-import React from 'react'
-import Header from './components/Header/Header'
-import Main from './components/Main/Main'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import About from "./components/About/About";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
+import MainLayout from "./layout/MainLayout";
+import Main from "./components/Main/Main";
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <Main/>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Main />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

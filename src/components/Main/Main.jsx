@@ -20,7 +20,7 @@ const Main = () => {
     setFilterRestaurant(json.data.menu);
   };
 
-  return listOfRestaurant.length === 0 ? (
+  return listOfRestaurant?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -42,7 +42,7 @@ const Main = () => {
           <button
             onClick={() => {
               const filteredList = listOfRestaurant.filter((res) =>
-                res.name.toLowerCase().includes(txtValue.toLowerCase())
+                res.info.name.toLowerCase().includes(txtValue.toLowerCase())
               );
               setFilterRestaurant(filteredList);
             }}
@@ -54,7 +54,7 @@ const Main = () => {
           className="btn-filter"
           onClick={() => {
             const filterData = listOfRestaurant.filter(
-              (res) => res.avgRating > 4
+              (res) => res.info.avgRating > 4
             );
             setFilterRestaurant(filterData);
           }}
@@ -64,7 +64,7 @@ const Main = () => {
       </div>
       <div className="res-container">
         {filterRestaurant?.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>

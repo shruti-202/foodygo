@@ -1,18 +1,31 @@
 import React from "react";
 import "./RestaurantCard.css";
+import { CDN_URL } from "../../utils/constant";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { name, description, price, delivery_time, image, avgRating } = resData;
+  const {
+    name,
+    description,
+    costForTwo,
+    sla: { slaString },
+    cloudinaryImageId,
+    avgRating,
+  } = resData?.info;
 
   return (
     <div className="res-card">
-      <img src={image} alt="food" className="card-img" width="100px" />
+      <img
+        src={CDN_URL + cloudinaryImageId}
+        alt="food"
+        className="card-img"
+        width="100px"
+      />
       <h3>{name}</h3>
       <h4>{description}</h4>
-      <h4>{price}₹</h4>
+      <h4>{costForTwo}</h4>
       <h4>{avgRating}⭐</h4>
-      <h4>{delivery_time}</h4>
+      <h4>{slaString}</h4>
     </div>
   );
 };

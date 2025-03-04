@@ -3,6 +3,7 @@ import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import { fakeFetch } from "../../utils/mockData";
 import "./Main.css";
 import Shimmer from "../Shimmer/Shimmer";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -64,7 +65,13 @@ const Main = () => {
       </div>
       <div className="res-container">
         {filterRestaurant?.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            to={"/restaurant/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            {" "}
+            <RestaurantCard resData={restaurant} />{" "}
+          </Link>
         ))}
       </div>
     </div>

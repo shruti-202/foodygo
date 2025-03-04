@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import MainLayout from "./layout/MainLayout";
 import Main from "./components/Main/Main";
+import RestaurantMenu from "./components/RestaurantMenu/RestaurantMenu";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />
+          <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
           <Route path="/*" element={<PageNotFound />} />
         </Route>
       </Routes>

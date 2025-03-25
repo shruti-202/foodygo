@@ -4,6 +4,7 @@ import { fakeFetch } from "../../utils/mockData";
 import "./Main.css";
 import Shimmer from "../Shimmer/Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Main = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -20,6 +21,12 @@ const Main = () => {
     setListOfRestaurant(json.data.menu);
     setFilterRestaurant(json.data.menu);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) return (
+    <h1>You are Offline</h1>
+  )
 
   return listOfRestaurant?.length === 0 ? (
     <Shimmer />
